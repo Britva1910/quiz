@@ -1,0 +1,78 @@
+.categori__artist-inner {
+    max-width: 328px;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    @include media-tablet {
+        max-width: $tablet-width;
+    }
+    @include media-laptop {
+        max-width: 530px;
+    }
+}
+
+.categori-header {
+    margin: 20px 0;
+    display: none; //flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.categori-close {
+    display: block;
+    width: 14px;
+    height: 14px;
+    background-image: url(./../assets/svg/close_btn.svg);
+}
+
+.categori-time_progress {
+    position: relative;
+    display: flex;
+    flex-basis: 75%;
+    height: 5px;
+    width: 70%;
+    background: $color-gray;
+}
+
+.timer-progress {
+    flex-basis: 40%;
+    width: 50%;
+    height: 5px;
+    background: $color-error;
+}
+
+.timer {
+    color: $color-normal;
+}
+
+.question-text {
+    margin: 15px auto;
+    text-align: center;
+    @include font($size: 2.2rem, $height: 2.8rem, $weight: 500);
+    color: $color-normal;
+}
+
+.categori-image {
+    flex-shrink: 1;
+    width: 100%;
+    align-items: center;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 20px;
+    @include media-tablet {}
+}
+
+.categori-answers-wrapper {
+    height: 140px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.categori-answers__button {
+    flex-basis: 47%;
+    height: 50px;
+}

@@ -10,15 +10,250 @@
 </head>
 
 <body>
-    <button class="button button-categories">Categori</button>
-    <div class="answers">
-        <button class="button button-answer" id="answer1">Answer-1</button>
-        <button class="button button-answer" id="answer2">Answer-2</button>
-        <button class="button button-answer" id="answer3">Answer-3</button>
-        <button class="button button-answer" id="answer4">Answer-4</button>
+    <!-- start promo -->
+    <div class="wrapper promo" id="promo">
+        <div class="promo__wrapper">
+            <span class="promo__settings" id="settings"></span>
+            <div class="promo__wrapper-inner">
+                <div class="logo promo__logo"></div>
+                <div class="button promo__button" id="artQuiz"><span>Artist quiz</span> </div>
+                <div class="button promo__button" id="picturesQuiz"><span>Pictures quiz</span> </div>
+            </div>
+
+            <footer class="footer promo__footer">
+                <a href="#"><span class="footer-logo"></span></a>
+                <a href="#"><span class="footer-github">App developer: Ivan Lashuk</span></a>
+                <span class="footer-year">2021</span>
+            </footer>
+        </div>
+
     </div>
-    <button class="button button-next">Next</button>
+
+    <!-- start settings -->
+    <div class="wrapper settings hide-page" id="settings">
+        <div class="settings__wrapper">
+            <header class="header__settings">
+                <span class="settings-btn-prev"></span>
+                <span class="settings-title">Settings</span>
+            </header>
+            <div class="volume-container">
+                <p class="volume-title">Volume</p>
+                <label for="" class="volume-range">
+                <input type="range" name="" id="">
+            </label>
+                <div class="volume-icon-wrapper">
+                    <span class="mute"></span>
+                    <span class="sound"></span>
+                </div>
+            </div>
+            <div class="timer-container">
+                <span class="timer-title">Time game</span>
+                <div class="timer-btn-wrapper">
+                    <span class="modal__block-title">On</span>
+                    <span class="switch">
+                    <input type="checkbox" checked="checked" class="modal__block-input"></input>
+                </div>
+            </div>
+        <div class="time-container">
+            <span class="time-title">Time to answer</span>
+                    <div class="time-btn-wrapper">
+                        <button class="time-btn time-btn-minus">-</button>
+                        <input type="number" class="time-value" value="2"></input>
+                        <button class="time-btn time-btn-plus">+</button>
+                    </div>
+                </div>
+                <div class="settings-btn-container">
+                    <button type="submit" class="settings-btn settings-btn-default">Default</button>
+                    <button type="submit" class="settings-btn settings-btn-save">Save</button>
+                </div>
+                <footer class="footer settings__footer">
+                    <a href="#"><span class="footer-logo"></span></a>
+                    <a href="#"><span class="footer-github">App developer: Ivan Lashuk</span></a>
+                    <span class="footer-year">2021</span>
+                </footer>
+            </div>
+        </div>
+
+        <!-- start categoris -->
+        <div class="wrapper categoris__wrapper hide-page" id="categoris">
+            <div class="categoris__wrapper-inner">
+                <header class="header-categories">
+                    <div class="categories-logo"></div>
+                    <nav class="categories__nav">
+                        <div class="categories__nav-links home-link">Home</div>
+                        <div class="categories__nav-links categories-link">Categories</div>
+                        <div class="categories__nav-links score-link">Score</div>
+                    </nav>
+                    <div class="promo__settings"></div>
+                </header>
+                <p class="categories-title">Categories</p>
+                <div class="cards-section-wrapper">
+                    <div class="card__wrapper card-active">
+                        <div class="card-top">
+                            <p class="card-name">01</p>
+                            <div class="card-score">5/10</div>
+                        </div>
+                        <img class="card-img" id="card-0" src="./../assets/img/pictures/0.jpg">
+                    </div>
+                    <div class="card__wrapper">
+                        <div class="card-top">
+                            <p class="card-name">01</p>
+                            <div class="card-score">5/10</div>
+                        </div>
+                        <img class="card-img" id="card-1" src="./../assets/img/pictures/10.jpg">
+                    </div>
+                    <div class="card__wrapper">
+                        <div class="card-top">
+                            <p class="card-name">01</p>
+                            <div class="card-score">5/10</div>
+                        </div>
+                        <img class="card-img" id="card-2" src="./../assets/img/pictures/20.jpg">
+                    </div>
+                    <div class="card__wrapper">
+                        <div class="card-top">
+                            <p class="card-name">01</p>
+                            <div class="card-score">5/10</div>
+                        </div>
+                        <img class="card-img" id="card-3" src="./../assets/img/pictures/30.jpg">
+                    </div>
+                    <div class="card__wrapper">
+                        <div class="card-top">
+                            <p class="card-name">01</p>
+                            <div class="card-score">5/10</div>
+                        </div>
+                        <img class="card-img" id="card-4" src="./../assets/img/pictures/40.jpg">
+                    </div>
+                    <div class="card__wrapper">
+                        <div class="card-top">
+                            <p class="card-name">01</p>
+                            <div class="card-score">5/10</div>
+                        </div>
+                        <img class="card-img" id="card-5" src="./../assets/img/pictures/50.jpg">
+                    </div>
+                    <div class="card__wrapper">
+                        <div class="card-top">
+                            <p class="card-name">01</p>
+                            <div class="card-score">5/10</div>
+                        </div>
+                        <img class="card-img" id="card-6" src="./../assets/img/pictures/60.jpg">
+                    </div>
+                    <div class="card__wrapper">
+                        <div class="card-top">
+                            <p class="card-name">01</p>
+                            <div class="card-score">5/10</div>
+                        </div>
+                        <img class="card-img" id="card-7" src="./../assets/img/pictures/70.jpg">
+                    </div>
+                    <div class="card__wrapper">
+                        <div class="card-top">
+                            <p class="card-name">01</p>
+                            <div class="card-score">5/10</div>
+                        </div>
+                        <img class="card-img" id="card-8" src="./../assets/img/pictures/80.jpg">
+                    </div>
+                    <div class="card__wrapper">
+                        <div class="card-top">
+                            <p class="card-name">01</p>
+                            <div class="card-score">5/10</div>
+                        </div>
+                        <img class="card-img" id="card-9" src="./../assets/img/pictures/90.jpg">
+                    </div>
+                    <div class="card__wrapper">
+                        <div class="card-top">
+                            <p class="card-name">01</p>
+                            <div class="card-score">5/10</div>
+                        </div>
+                        <img class="card-img" id="card-10" src="./../assets/img/pictures/100.jpg">
+                    </div>
+                    <div class="card__wrapper">
+                        <div class="card-top">
+                            <p class="card-name">01</p>
+                            <div class="card-score">5/10</div>
+                        </div>
+                        <img class="card-img" id="card-11" src="./../assets/img/pictures/110.jpg">
+                    </div>
+                </div>
+                <footer class="footer">
+                    <a href="#"><span class="footer-logo"></span></a>
+                    <a href="#"><span class="footer-github">App developer: Ivan Lashuk</span></a>
+                    <span class="footer-year">2021</span>
+                </footer>
+            </div>
+            <div class="navigation">
+                <div class="navigation__button">
+                    <div class="icon-home home-link"></div>
+                    <div class="button-home-name">Home</div>
+                </div>
+                <div class="navigation__button">
+                    <div class="icon-categories"></div>
+                    <div class="button-home-name">Categories</div>
+                </div>
+                <div class="navigation__button">
+                    <div class="icon-score"></div>
+                    <div class="button-home-name">Score</div>
+                </div>
+            </div>
+
+        </div>
+        <!-- finish categoris -->
+        <!-- start categori-artist -->
+        <div class="wrapper categori__artist hide-page" id="questions">
+            <div class="categori__artist-inner">
+                <header class="categori-header">
+                    <div class="categori-close"></div>
+                    <div class="categori-time_progress">
+                        <div class="timer-progress"></div>
+                    </div>
+                    <div class="timer">3:49</div>
+                </header>
+                <div class="question">
+                    <div class="question-text">
+                        Кто автор этой картины?
+                    </div>
+                    <img class="categori-image" id="question-img"></img>
+                    <div class="categori-answers-wrapper">
+                        <div class="button categori-answers__button" id="answer1"></div>
+                        <div class="button categori-answers__button" id="answer2"></div>
+                        <div class="button categori-answers__button" id="answer3"></div>
+                        <div class="button categori-answers__button" id="answer4"></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- finish categori-artist -->
+
+        <!-- start categori-pictures -->
+
+        <!-- finish categori-pictures -->
+        <!-- modals pages -->
+        <div class="wrapper modal modal-answer hide-page" id="modal-answer">
+            <div id="modal-answer-inner"></div>
+            <div class="button modal-answer__button">Продолжить</div>
+        </div>
+        <div class="wrapper modal-exit hide-page" id="modal-exit">
+            <p>Вы действительно хотите закончить викторину?</p>
+            <div class="modal-exit-inner">
+                <div class="button modal-answer__button">Отмена</div>
+                <div class="button modal-answer__button" onclick="openPage( 'promo')">Да</div>
+            </div>
+
+        </div>
+        <div class="wrapper modal modal-finish hide-page" id="modal-finish">
+            <div class="modal-finish-img"></div>
+            <p>Поздравляем!</p>
+            <p class="score">1/10</p>
+            <div class="modal-exit-inner">
+                <div class="button modal-answer__button" onclick="openPage('promo')">На главную</div>
+                <div class="button modal-answer__button" onclick="openPage('categoris')">Следующая викторина</div> /
+            </div>
+
+        </div>
 
 </body>
 
 </html>
+
+
+<!------------------------------------------------>

@@ -1,0 +1,16 @@
+%transition {
+    transition: all .3s ease-out;
+}
+
+%strong-alert:hover {
+    background-color: $color-active;
+    transform: scale(0.2);
+}
+
+%font-prim {
+    font-family: 'Gilroy', Verdana, sans-serif;
+}
+
+%font-add {
+    font-family: 'Poppins', Verdana, sans-serif;
+}

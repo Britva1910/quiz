@@ -1,0 +1,17 @@
+    .wrapper {
+        display: block;
+        margin: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        max-width: $mobile-small-width;
+        transition: all 1s ease-out;
+        @include media-tablet {
+            max-width: calc($tablet-width - 30px);
+        }
+        @include media-laptop {
+            max-width: 1400px;
+        }
+    }

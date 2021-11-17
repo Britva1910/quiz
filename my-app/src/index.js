@@ -1,171 +1,114 @@
-const images = [{
-        author: 'Павел Федотов',
-        name: 'Сватовство майора',
-        year: '1852',
-        imageNum: '0',
-        answer1: 'Павел Федотов',
-        answer2: 'err',
-        answer3: 'err',
-        answer4: 'err',
-    },
-    {
-        author: 'Эдгар Дега',
-        name: 'Голубые танцовщицы',
-        year: '1897',
-        imageNum: '1',
-        answer1: 'err',
-        answer2: 'err',
-        answer3: 'Эдгар Дега',
-        answer4: 'err',
-    },
-    {
-        author: 'Веронезе',
-        name: 'Пир в доме Левия',
-        year: '1563',
-        imageNum: '2',
-        answer1: 'err',
-        answer2: 'err',
-        answer3: 'err',
-        answer4: 'Веронезе',
-    },
-    {
-        author: 'Илья Репин',
-        name: 'Иван Грозный и сын его Иван',
-        year: '1885',
-        imageNum: '3',
-        answer1: 'err',
-        answer2: 'Илья Репин',
-        answer3: 'err',
-        answer4: 'err',
-    },
-    {
-        author: 'Константин Маковский',
-        name: 'Портрет графини Софьи',
-        year: '1890',
-        imageNum: '4',
-        answer1: 'Константин Маковский',
-        answer2: 'err',
-        answer3: 'err',
-        answer4: 'err',
-    },
-    {
-        author: 'Василий Перов',
-        name: 'Приезд гувернантки в купеческий дом',
-        year: '1866',
-        imageNum: '5',
-        answer1: 'err',
-        answer2: 'err',
-        answer3: 'Василий Перов',
-        answer4: 'err',
-    },
-    {
-        author: 'Микеланджело',
-        name: 'Сотворение Адама',
-        year: '1511',
-        imageNum: '6',
-        answer1: 'err',
-        answer2: 'Микеланджело',
-        answer3: 'err',
-        answer4: 'err',
-    },
-    {
-        author: 'Пьер Огюст Ренуар',
-        name: 'Прогулка в Булонском лесу',
-        year: '1873',
-        imageNum: '7',
-        answer1: 'Пьер Огюст Ренуар',
-        answer2: 'err',
-        answer3: 'err',
-        answe4: 'err',
-    },
-    {
-        author: 'Ян Вермеер',
-        name: 'Хозяйка и служанка',
-        year: '1667',
-        imageNum: '8',
-        answer1: 'Ян Вермеер',
-        answer2: 'err',
-        answer3: 'err',
-        answer4: 'err',
-    },
-    {
-        author: 'Василий Поленов',
-        name: 'Московский дворик',
-        year: '1877',
-        imageNum: '9',
-        answer1: 'err',
-        answer2: 'err',
-        answer3: 'err',
-        answer4: 'Василий Поленов',
-    }
-];
+import './scss/styles.scss';
+import './assets/fonts/Gilroy-Bold.ttf';
 
-const button = document.querySelector('.button-categories');
-const answers = document.querySelectorAll('.button-answer');
-const next = document.querySelector('.button-next');
+import { settings, categorisButtons, backButton, homeButton, cardsBlock, openPage } from './js/openPages'
+
+/* cheange pages */
+settings.forEach(btn => btn.addEventListener('click', () => openPage('settings')));
+categorisButtons.forEach(btn => btn.addEventListener('click', () => openPage('categoris')));
+backButton.addEventListener('click', () => openPage('promo'));
+homeButton.forEach(btn => btn.addEventListener('click', () => openPage('promo')));
+cardsBlock.forEach(btn => btn.addEventListener('click', () => {
+    openPage('questions');
+}))
 
 
 
+/* ++++++++++++++++++ рендер вопросов категории ++++++++++++++++++++++ */
+import { questionsGenerator } from './js/getQuestionsAboutArtist';
 
-button.addEventListener('click', () => {
-    show.showQuestion();
+const card = document.querySelector('.cards-section-wrapper'); //все карточки категорий
+const answerButtons = document.querySelectorAll('.categori-answers__button'); //кнопки ответов
+const modalAnswerInner = document.getElementById('modal-answer-inner'); //окно модалки с ответом
+const modalAnswerButton = document.querySelector('.modal-answer__button'); //кнопка ДАЛЕЕ в модалке ответа
+
+//генерируем вопросы выбраной категории
+let questionsArr //10 вопросов категории
+let numberQuestion = 0;
+let amountCorrectAnswers = 0;
+let currentAnswer; //текущий вопрос
+
+card.addEventListener('click', (event) => {
+    numberQuestion = 0;
+    amountCorrectAnswers = 0;
+    currentAnswer = 0;
+    const indexCategory = event.target.id.slice(5);
+    questionsArr = questionsGenerator(indexCategory);
+    renderQuestion();
+});
+
+modalAnswerButton.addEventListener('click', () => {
+    nextQuestions();
 })
 
-answers.forEach((elem) => {
-    elem.addEventListener('click', (event) => {
-        show.getAnswer(event);
-        show.checkAnswer();
-        show.showModal();
-        show.cheangeNumberQuestion();
-    });
-})
-next.addEventListener('click', () => {
-    show.showQuestion();
-})
+const renderQuestion = () => {
+    document.getElementById('answer1').innerHTML = `<span>${questionsArr[numberQuestion].answer1}</span>`;
+    document.getElementById('answer2').innerHTML = `<span>${questionsArr[numberQuestion].answer2}</span>`;
+    document.getElementById('answer3').innerHTML = `<span>${questionsArr[numberQuestion].answer3}</span>`;
+    document.getElementById('answer4').innerHTML = `<span>${questionsArr[numberQuestion].answer4}</span>`;
+    document.getElementById('answer1').setAttribute("onclick", "checkAnswer(this)");
+    document.getElementById('answer2').setAttribute("onclick", "checkAnswer(this)");
+    document.getElementById('answer3').setAttribute("onclick", "checkAnswer(this)");
+    document.getElementById('answer4').setAttribute("onclick", "checkAnswer(this)");
+    document.getElementById("question-img").src = `${questionsArr[numberQuestion].imgPath}`;
+}
 
-
-
-
-class showCategories {
-    constructor() {
-        this.numberQuestion = 0;
-        this.images = images;
-        this.answer;
-        this.result;
+const nextQuestions = () => {
+    if (numberQuestion < questionsArr.length) {
+        renderQuestion();
+        openPage('questions');
+    } else {
+        document.querySelector('.score').innerHTML = `${amountCorrectAnswers} / ${questionsArr.length}`;
+        openPage('modal-finish');
+        console.log(`Вы правильно ответили ${amountCorrectAnswers} вопросов из ${questionsArr.length}!`);
+        console.log('Здесь должна быть модалка с результатом');
     }
-
-    cheangeNumberQuestion() {
-        this.numberQuestion++;
-    }
-
-    showQuestion() {
-        console.log(`Вопрос: кто автор №${this.images[this.numberQuestion].imageNum}`);
-    }
-
-    getAnswer(event) {
-        this.answer = event.target.id;
-        console.log(this.answer);
-    }
-
-    checkAnswer() {
-        if (this.images[this.numberQuestion][`${this.answer}`] != 'err') {
-            this.result = true;
-        } else {
-            this.result = false;
-        }
-
-    }
-    showModal() {
-        if (this.result) {
-            console.log('This is true!');
-            console.log('Push next button');
-        } else {
-            console.log('False!');
-            console.log('Push next button');
-        }
-    }
-
-
 
 }
-let show = new showCategories();
+
+function checkAnswer(answer) {
+    const userAnswer = answer.textContent;
+    const correctAnswer = questionsArr[numberQuestion].author;
+    if (userAnswer == correctAnswer) {
+        currentAnswer = true;
+        amountCorrectAnswers++;
+    } else {
+        currentAnswer = false;
+    }
+    showModal();
+    openPage('modal-answer')
+}
+
+window.checkAnswer = checkAnswer;
+
+function showModal() {
+    modalAnswerInner.innerHTML = `
+    <img id = 'modal-answer-img' class = 'modal-answer-img'>
+    <img class="modal-answer-icon" id="modal-answer-icon">
+    <p class="modal-answer__picture-name">${questionsArr[numberQuestion].author}</p>
+    <p class="modal-answer__author">${questionsArr[numberQuestion].name}</p>
+  `
+    document.getElementById("modal-answer-img").src = `${questionsArr[numberQuestion].imgPath}`;
+    if (currentAnswer) {
+        document.getElementById("modal-answer-icon").src = './assets/svg/modals/answer-true.svg';
+    } else {
+        document.getElementById("modal-answer-icon").src = './assets/svg/modals/answer-false.svg';
+    }
+    numberQuestion++;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

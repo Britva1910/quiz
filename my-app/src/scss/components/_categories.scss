@@ -1,0 +1,129 @@
+.categoris__wrapper-inner {
+    max-width: 340px;
+    margin: 15px auto 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    @include media-tablet {
+        max-width: $tablet-width;
+    }
+    @include media-laptop {
+        max-width: 100%;
+    }
+}
+
+.header-categories {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.categories-logo {
+    width: 166px;
+    height: 62px;
+    background-image: url(./../assets/svg/categories/Group1438.svg);
+    background-size: contain;
+}
+
+.categories__nav {
+    margin-left: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.categories__nav-links {
+    margin: 0 30px;
+    color: $color-normal;
+    @include font($size: 2.4rem, $height: 1.8rem, $weight: 500);
+    cursor: pointer;
+}
+
+.categories-title {
+    color: $color-normal;
+    @include font($size: 2.4rem, $height: 2.8rem, $weight: 500);
+}
+
+.cards-section-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+    row-gap: 15px;
+    @include media-laptop {
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}
+
+.card__wrapper {
+    cursor: pointer;
+}
+
+.card-top {
+    width: 100%;
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    @include font($size: 1.6rem, $height: 1.8rem, $weight: 500);
+}
+
+.card-name {
+    margin: 0;
+    color: $color-normal;
+}
+
+.card-img {
+    height: 164px;
+    border-radius: 15px;
+    filter: grayscale(100%);
+    @include media-laptop {
+        height: 206px;
+        width: 195px;
+    }
+}
+
+.navigation {
+    max-width: 360px;
+    height: 75px;
+    margin: 0 auto;
+    position: sticky;
+    bottom: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: $color-bg;
+    border-radius: 30px 30px 0 0;
+    border: $color-normal 1px solid;
+    border-bottom: none;
+    @include media-laptop {
+        display: none;
+    }
+}
+
+.button-home-name {
+    color: $color-normal;
+    @include font($size: 1.2rem, $height: 1.8rem, $weight: 700);
+}
+
+.icon-home {
+    margin: 0 auto;
+    width: 28px;
+    height: 28px;
+    background-image: url(./../assets/svg/categories/Group.svg);
+    background-repeat: no-repeat;
+}
+
+.icon-categories {
+    margin: 0 auto;
+    width: 28px;
+    height: 28px;
+    background-image: url(./../assets/svg/categories/bx_bxs-category.svg);
+}
+
+.icon-score {
+    margin: 0 auto;
+    width: 28px;
+    height: 28px;
+    background-image: url(./../assets/svg/categories/cil_star.svg);
+}

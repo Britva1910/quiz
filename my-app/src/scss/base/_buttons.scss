@@ -1,0 +1,41 @@
+.button {
+    width: 156px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $color-normal;
+    border-radius: 30px;
+    cursor: pointer;
+    span {
+        @include font($size: 2rem, $height: 2.2rem, $weight: 500);
+        color: $color-normal;
+        text-align: center;
+    }
+}
+
+.time-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    color: $color-bg;
+    @include font($size: 3rem, $height: 2.8rem, $weight: 500);
+}
+
+.settings-btn {
+    width: 156px;
+    height: 56px;
+    border-radius: 30px;
+    border-color: $color-normal;
+    background-color: $color-bg;
+    border: $color-normal 2px solid;
+    color: $color-normal;
+    @include font($size: 2.4rem, $height: 2.8rem, $weight: 500);
+}
+
+.modal-answer__button {
+    width: 356px;
+    @include font($size: 2.4rem, $height: 2.8rem, $weight: 500);
+    background-color: $color-active;
+}

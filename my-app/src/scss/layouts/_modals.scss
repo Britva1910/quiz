@@ -1,0 +1,88 @@
+.modal {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 20px;
+    background-color: $color-normal;
+    color: $color-bg;
+    @include font($size: 2.4rem, $height: 2.8rem, $weight: 500);
+    transition: all .3s ease-out;
+    p {
+        margin: 10px;
+    }
+    @include media-laptop {
+        width: 530px;
+        height: 690px;
+    }
+}
+
+.modal-answer-icon {
+    position: absolute;
+    height: 60px;
+    width: 60px;
+    left: 70px;
+    top: 400px;
+}
+
+.modal-answer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .modal-answer-img {
+        width: 450px;
+        height: 450px;
+        margin-top: 40px;
+        border-radius: 20px;
+    }
+}
+
+.modal-exit {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-radius: 20px;
+    background-color: $color-normal;
+    color: $color-bg;
+    p {
+        margin: 70px 50px;
+        text-align: center;
+    }
+    @include font($size: 2.4rem, $height: 2.8rem, $weight: 500);
+    transition: all 1s ease-out;
+    @include media-laptop {
+        width: 430px;
+        height: 390px;
+    }
+}
+
+.modal-exit-inner {
+    display: inline-block;
+    margin: 0 auto;
+    div {
+        margin: 15px 0;
+    }
+}
+
+.modal-finish {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    p {
+        @include font($size: 4.4rem, $height: 2.8rem, $weight: 700);
+    }
+    .score {
+        @include font($size: 3.4rem, $height: 2.8rem, $weight: 700);
+    }
+}
+
+.modal-finish-img {
+    height: 176px;
+    width: 180px;
+    background-image: url(./../assets/svg/modals/champion-cup.svg);
+}

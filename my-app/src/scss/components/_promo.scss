@@ -1,0 +1,43 @@
+.promo__wrapper {
+    position: relative;
+    display: grid;
+    grid-template-rows: 14% 39% 230px 15%;
+    width: 100%;
+    height: 100vh;
+    background-image: url(./../assets/img/promo/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include media-laptop {
+        background-image: url(./../assets/img/promo/bgLaptop.jpg);
+        background-size: cover;
+    }
+}
+
+.promo__settings {
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background-image: url(./../assets/svg/carbon_settings.svg);
+    cursor: pointer;
+}
+
+.promo__wrapper-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    grid-row: 3 / 4;
+    justify-self: center;
+}
+
+.promo__button {
+    width: 270px;
+    height: 56px;
+}
+
+.promo__footer {
+    grid-row: 4 / 5;
+}
